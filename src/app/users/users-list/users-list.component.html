@@ -1,0 +1,61 @@
+<div>
+  <h2>Lista de Usuarios</h2>
+  <p>Total de Usuarios: {{ users.length }}</p>
+
+  <!-- Tabla para mostrar usuarios -->
+  <table *ngIf="users.length > 0" class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+          <button (click)="editUser(user)">Editar</button>
+          <button (click)="deleteUser(user.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Mensaje si no hay usuarios -->
+  <p *ngIf="users.length === 0">No hay usuarios registrados.</p>
+
+  <!-- Formulario para agregar/editar usuarios -->
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Nombre:</label>
+      <input
+        type="text"
+        id="name"
+        formControlName="name"
+        placeholder="Nombre"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        placeholder="Email"
+        class="form-control"
+      />
+    </div>
+    <button type="submit" class="btn">Agregar/Editar Usuario</button>
+  </form>
+</div>
+<!-- <div>
+  <h2>Lista de Usuarios DevExtreme</h2>
+</div> -->
+<!-- <dx-list [dataSource]="users" displayExpr="name">
+  <div *dxItemTemplate="let item">
+    {{ item.name }}
+  </div>
+</dx-list> -->

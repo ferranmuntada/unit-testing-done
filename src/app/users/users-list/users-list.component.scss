@@ -1,0 +1,93 @@
+div {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+
+  /* Estilo de la tabla */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      color: black;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr:hover {
+      background-color: #eaeaea;
+    }
+
+    button {
+      padding: 5px 10px;
+      margin-right: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &.edit {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      &.delete {
+        background-color: #f44336;
+        color: white;
+      }
+    }
+  }
+
+  /* Estilo del formulario */
+  form {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+
+    input[type='text'],
+    input[type='email'] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    /* Estilo del botón del formulario */
+    button {
+      width: 100%;
+      background-color: #008cba;
+    }
+
+    /* Espaciado entre elementos del formulario */
+    div {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+/* Estilo de los botones */
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 8px;
+
+  &:hover {
+    background-color: #45a049;
+  }
+}
